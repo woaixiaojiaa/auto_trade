@@ -9,7 +9,7 @@ import re
 def buy_coins(amount,price,coin='doge'):
     nonce=time.time()
     a='key=(pub_key)&nonce=%d&coin=%s&amount=%d&price=%f&version=2' % (nonce,coin,amount,price)
-    self_key_md5=hashlib.md5('priv_key)'.encode('utf-8')).hexdigest().encode('utf-8')
+    self_key_md5=hashlib.md5('(priv_key)'.encode('utf-8')).hexdigest().encode('utf-8')
     data = {'key': '(pub_key)',
             'signature': hmac.new(self_key_md5,a.encode('utf-8'),digestmod=hashlib.sha256).hexdigest(),
             'nonce': '%d' % (nonce),
@@ -34,7 +34,7 @@ def buy_coins(amount,price,coin='doge'):
 def sell_coins(amount,price,coin='doge'):
     nonce=time.time()
     a='key=(pub_key)&nonce=%d&coin=%s&amount=%d&price=%f&version=2' % (nonce,coin,amount,price)
-    self_key_md5=hashlib.md5('priv_key)'.encode('utf-8')).hexdigest().encode('utf-8')
+    self_key_md5=hashlib.md5('(priv_key)'.encode('utf-8')).hexdigest().encode('utf-8')
     data = {'key': '(pub_key)',
             'signature': hmac.new(self_key_md5,a.encode('utf-8'),digestmod=hashlib.sha256).hexdigest(),
             'nonce': '%d' % (nonce),
@@ -63,7 +63,7 @@ def sell_coins(amount,price,coin='doge'):
 def check_order(ID):#checking if transaction success or not
     nonce=time.time()
     a='key=(pub_key)&nonce=%d&id=%d&version=2' % (nonce,ID)
-    self_key_md5=hashlib.md5('priv_key)'.encode('utf-8')).hexdigest().encode('utf-8')
+    self_key_md5=hashlib.md5('(priv_key)'.encode('utf-8')).hexdigest().encode('utf-8')
     data = {'key': '(pub_key)',
             'signature': hmac.new(self_key_md5,a.encode('utf-8'),digestmod=hashlib.sha256).hexdigest(),
             'nonce': '%d' % (nonce),
@@ -89,7 +89,7 @@ def check_order(ID):#checking if transaction success or not
 def cancel_order(ID):#cancel un wanted order
     nonce=time.time()
     a='key=(pub_key)&nonce=%d&id=%d&version=2' % (nonce,ID)
-    self_key_md5=hashlib.md5('priv_key)'.encode('utf-8')).hexdigest().encode('utf-8')
+    self_key_md5=hashlib.md5('(priv_key)'.encode('utf-8')).hexdigest().encode('utf-8')
     data = {'key': '(pub_key)',
             'signature': hmac.new(self_key_md5,a.encode('utf-8'),digestmod=hashlib.sha256).hexdigest(),
             'nonce': '%d' % (nonce),
@@ -113,7 +113,7 @@ def get_account_info():#checking if transaction success or not
     nonce=time.time()
     coin_remain=[]        #[doge_reserved,cny_reserved]
     a='key=(pub_key)&nonce=%d&version=2' % (nonce)
-    self_key_md5=hashlib.md5('priv_key)'.encode('utf-8')).hexdigest().encode('utf-8')
+    self_key_md5=hashlib.md5('(priv_key)'.encode('utf-8')).hexdigest().encode('utf-8')
     data = {'key': '(pub_key)',
             'signature': hmac.new(self_key_md5,a.encode('utf-8'),digestmod=hashlib.sha256).hexdigest(),
             'nonce': '%d' % (nonce),
